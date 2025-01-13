@@ -27,6 +27,20 @@
       }
     },
     {
+      "label": "E-Mail-Adresse des Kunden",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0ve2nvb",
+        "columns": null
+      },
+      "id": "Field_05v2hxs",
+      "key": "email",
+      "validate": {
+        "required": true,
+        "validationType": "email"
+      }
+    },
+    {
       "label": "Auftragsnummer",
       "type": "number",
       "layout": {

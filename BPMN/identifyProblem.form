@@ -15,6 +15,22 @@
       }
     },
     {
+      "label": "Lösungsvorschlag",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_1nwteeo",
+        "columns": null
+      },
+      "id": "Field_0brgn19",
+      "key": "solution",
+      "conditional": {
+        "hide": "=escalation = true"
+      },
+      "validate": {
+        "required": true
+      }
+    },
+    {
       "values": [
         {
           "label": "einfacheKlärung",

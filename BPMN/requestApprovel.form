@@ -1,0 +1,23 @@
+{
+  "components": [
+    {
+      "action": "submit",
+      "label": "Bestätigung für Rückerstattung erbitten",
+      "type": "button",
+      "layout": {
+        "row": "Row_0nuwcqs",
+        "columns": null
+      },
+      "id": "Field_0a3lus0"
+    }
+  ],
+  "type": "default",
+  "id": "requestApprovel",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 16
+}
