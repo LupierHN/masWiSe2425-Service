@@ -33,7 +33,7 @@
           "value": "delivery"
         }
       ],
-      "label": "Select",
+      "label": "Fachbereich",
       "type": "select",
       "layout": {
         "row": "Row_0u9qor8",
@@ -42,7 +42,11 @@
       "id": "Field_0lfo7t4",
       "key": "category",
       "defaultValue": "<none>",
-      "properties": {}
+      "properties": {},
+      "conditional": {
+        "hide": "=escalation = false"
+      },
+      "description": "Nur wenn akteulle Kategorie nicht Lieferprobleme ist."
     },
     {
       "action": "submit",

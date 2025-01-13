@@ -1,0 +1,36 @@
+{
+  "components": [
+    {
+      "label": "Alternativer Lösungsvorschlag",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_1hf22dx",
+        "columns": null
+      },
+      "id": "Field_0b9t2wh",
+      "key": "altSolution",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "action": "submit",
+      "label": "Submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_1838rwf",
+        "columns": null
+      },
+      "id": "Field_0a31mb8"
+    }
+  ],
+  "type": "default",
+  "id": "altSolution",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 16
+}

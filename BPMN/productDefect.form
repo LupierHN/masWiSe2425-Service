@@ -10,7 +10,7 @@
       "id": "Field_0qhz3ve",
       "key": "productDefect",
       "validate": {
-        "required": true
+        "required": false
       }
     },
     {

@@ -70,6 +70,33 @@
       "defaultValue": "none"
     },
     {
+      "values": [
+        {
+          "label": "Erstattung",
+          "value": "refund"
+        },
+        {
+          "label": "Austausch",
+          "value": "replace"
+        }
+      ],
+      "label": "Art der Reklamation",
+      "type": "select",
+      "layout": {
+        "row": "Row_1wr3fgm",
+        "columns": null
+      },
+      "id": "Field_0b9j2rq",
+      "key": "complaintOption",
+      "defaultValue": "value",
+      "validate": {
+        "required": false
+      },
+      "conditional": {
+        "hide": "=category != \"complaint\""
+      }
+    },
+    {
       "label": "Produktwert",
       "type": "number",
       "layout": {

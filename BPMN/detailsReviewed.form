@@ -1,6 +1,27 @@
 {
   "components": [
     {
+      "values": [
+        {
+          "label": "Ersatz",
+          "value": "replace"
+        },
+        {
+          "label": "Erstattung",
+          "value": "refund"
+        }
+      ],
+      "label": "Reklmationsweise",
+      "type": "select",
+      "layout": {
+        "row": "Row_00z4599",
+        "columns": null
+      },
+      "id": "Field_1362j61",
+      "key": "complaintOption",
+      "defaultValue": "value"
+    },
+    {
       "action": "submit",
       "label": "Details geprüft",
       "type": "button",
