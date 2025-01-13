@@ -1,0 +1,67 @@
+{
+  "components": [
+    {
+      "label": "Eskalation?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_0eaick8",
+        "columns": null
+      },
+      "id": "Field_18a9g3p",
+      "key": "escalation",
+      "description": "Muss das Problem von einer Fachabteilung bearbeitet werden?",
+      "validate": {
+        "required": false
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "einfacheKlärung",
+          "value": "simple"
+        },
+        {
+          "label": "unkategorisiert",
+          "value": "none"
+        },
+        {
+          "label": "Reklamation",
+          "value": "complaint"
+        },
+        {
+          "label": "Lieferprobleme",
+          "value": "delivery"
+        }
+      ],
+      "label": "Select",
+      "type": "select",
+      "layout": {
+        "row": "Row_0u9qor8",
+        "columns": null
+      },
+      "id": "Field_0lfo7t4",
+      "key": "category",
+      "defaultValue": "<none>",
+      "properties": {}
+    },
+    {
+      "action": "submit",
+      "label": "Submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_1nfrinn",
+        "columns": null
+      },
+      "id": "Field_1wadx4h"
+    }
+  ],
+  "type": "default",
+  "id": "identifyProblem",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 16
+}

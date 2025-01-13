@@ -1,0 +1,23 @@
+{
+  "components": [
+    {
+      "action": "submit",
+      "label": "Anfrage archivieren",
+      "type": "button",
+      "layout": {
+        "row": "Row_1mqjeau",
+        "columns": null
+      },
+      "id": "Field_1lxikpr"
+    }
+  ],
+  "type": "default",
+  "id": "archiveRequest",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 16
+}

@@ -1,0 +1,36 @@
+{
+  "components": [
+    {
+      "label": "Produkt fehlerhaft",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_02q596s",
+        "columns": null
+      },
+      "id": "Field_0qhz3ve",
+      "key": "productDefect",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "action": "submit",
+      "label": "Submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_1971h8p",
+        "columns": null
+      },
+      "id": "Field_0auqn1z"
+    }
+  ],
+  "type": "default",
+  "id": "productDefect",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 16
+}

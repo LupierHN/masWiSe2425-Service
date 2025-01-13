@@ -1,0 +1,23 @@
+{
+  "components": [
+    {
+      "action": "submit",
+      "label": "Details geprüft",
+      "type": "button",
+      "layout": {
+        "row": "Row_1dpt18o",
+        "columns": null
+      },
+      "id": "Field_1pncxg8"
+    }
+  ],
+  "type": "default",
+  "id": "detailsReviewed",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 16
+}

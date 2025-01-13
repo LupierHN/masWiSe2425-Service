@@ -1,0 +1,127 @@
+{
+  "components": [
+    {
+      "label": "Kundenname",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0ca59wg",
+        "columns": null
+      },
+      "id": "Field_0p41dzh",
+      "key": "customer",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Kundennummer",
+      "type": "number",
+      "layout": {
+        "row": "Row_0ca59wg",
+        "columns": null
+      },
+      "id": "Field_1wcgwmh",
+      "key": "customer_nr",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Auftragsnummer",
+      "type": "number",
+      "layout": {
+        "row": "Row_1pa06ki",
+        "columns": null
+      },
+      "id": "Field_1kiaxkq",
+      "key": "order_nr"
+    },
+    {
+      "values": [
+        {
+          "label": "einfacheKlärung",
+          "value": "simple"
+        },
+        {
+          "label": "unkategorisiert",
+          "value": "none"
+        },
+        {
+          "label": "Reklamation",
+          "value": "complaint"
+        },
+        {
+          "label": "Lieferprobleme",
+          "value": "delivery"
+        }
+      ],
+      "label": "Anfragentyp",
+      "type": "select",
+      "layout": {
+        "row": "Row_165vcxm",
+        "columns": null
+      },
+      "id": "Field_00rd4hn",
+      "key": "category",
+      "searchable": false,
+      "validate": {
+        "required": true
+      },
+      "defaultValue": "none"
+    },
+    {
+      "label": "Produktwert",
+      "type": "number",
+      "layout": {
+        "row": "Row_1r04ccc",
+        "columns": null
+      },
+      "id": "Field_1hs5n4n",
+      "key": "productValue",
+      "validate": {
+        "required": false
+      },
+      "properties": {},
+      "defaultValue": 0
+    },
+    {
+      "label": "Betreff",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0iy4l98",
+        "columns": null
+      },
+      "id": "Field_1vowvsa",
+      "key": "subject"
+    },
+    {
+      "label": "Beschreibung",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_17q4kzi",
+        "columns": null
+      },
+      "id": "Field_0ejitmk",
+      "key": "description"
+    },
+    {
+      "action": "submit",
+      "label": "Submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_19xzin5",
+        "columns": null
+      },
+      "id": "Field_06fuu16"
+    }
+  ],
+  "type": "default",
+  "id": "newTicket",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 16
+}
