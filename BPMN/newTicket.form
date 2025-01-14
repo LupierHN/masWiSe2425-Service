@@ -41,6 +41,89 @@
       }
     },
     {
+      "components": [
+        {
+          "label": "Straße",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_0j2hdaf",
+            "columns": 12
+          },
+          "id": "Field_1b45c4r",
+          "key": "streetAddress",
+          "description": "\"-\" statt Leerzeichen",
+          "validate": {
+            "required": true
+          },
+          "properties": {}
+        },
+        {
+          "values": [
+            {
+              "label": "Deutschland",
+              "value": "DE"
+            },
+            {
+              "label": "Schweiz",
+              "value": "CH"
+            },
+            {
+              "label": "Österreich",
+              "value": "AT"
+            }
+          ],
+          "label": "Land",
+          "type": "select",
+          "layout": {
+            "row": "Row_0j2hdaf",
+            "columns": 4
+          },
+          "id": "Field_0ssm391",
+          "key": "countryCode",
+          "defaultValue": "DE",
+          "validate": {
+            "required": true
+          }
+        },
+        {
+          "label": "Stadt",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1b9tipx",
+            "columns": null
+          },
+          "id": "Field_1o45ki7",
+          "key": "addressLocality",
+          "validate": {
+            "required": true
+          }
+        },
+        {
+          "label": "Postleitzahl",
+          "type": "number",
+          "layout": {
+            "row": "Row_1b9tipx",
+            "columns": 6
+          },
+          "id": "Field_0ejpzb8",
+          "key": "postalCode",
+          "validate": {
+            "required": true,
+            "min": 10000
+          },
+          "serializeToString": false
+        }
+      ],
+      "showOutline": true,
+      "label": "Adresse des Kunden",
+      "type": "group",
+      "layout": {
+        "row": "Row_1vp2rl6",
+        "columns": null
+      },
+      "id": "Field_0qn3xnc"
+    },
+    {
       "label": "Auftragsnummer",
       "type": "number",
       "layout": {
@@ -157,7 +240,7 @@
     }
   ],
   "type": "default",
-  "id": "newTicket",
+  "id": "Adresse",
   "exporter": {
     "name": "Camunda Modeler",
     "version": "5.28.0"
