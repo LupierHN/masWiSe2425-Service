@@ -12,13 +12,13 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "dataTable&Sequence_7",
-        "emailDate&Sequence_7",
-        "outputString&Sequence_2",
+        "dataTable&Sequence_1",
+        "emailDate&Sequence_1",
+        "outputString&Sequence_1",
+        "emailBody&Sequence_1",
+        "emailSubject&Sequence_1",
         "mailMessages&Sequence_1",
-        "emailList&Sequence_1",
-        "emailSubject&Sequence_2",
-        "emailBody&Sequence_2"
+        "emailList&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

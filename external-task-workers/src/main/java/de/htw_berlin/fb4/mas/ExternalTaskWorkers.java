@@ -1,10 +1,14 @@
 package de.htw_berlin.fb4.mas;
 
 import de.htw_berlin.fb4.mas.worker.PrintVariables;
+import de.htw_berlin.fb4.mas.worker.RunUiPathRobot;
 import de.htw_berlin.fb4.mas.worker.SendMail;
+import de.htw_berlin.fb4.mas.worker.RunAPI;
 import org.camunda.bpm.client.ExternalTaskClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.nio.file.Path;
 
 public class ExternalTaskWorkers {
 
@@ -18,8 +22,12 @@ public class ExternalTaskWorkers {
                 .maxTasks(1)
                 .build();
 
+        client.subscribe("RPABotFeedback.1.0.2")
+                .handler(new RunUiPathRobot(Path.of("RPABotFeedback.1.0.2.nupkg").toAbsolutePath()))
+                .open();
         client.subscribe("print-variables").handler(new PrintVariables()).open();
         client.subscribe("send-mail").handler(new SendMail()).open();
+        client.subscribe("run-api").handler(new RunAPI()).open();
 
         log.info("ExternalTaskWorkers started");
     }

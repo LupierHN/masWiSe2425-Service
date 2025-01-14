@@ -131,7 +131,10 @@
         "columns": null
       },
       "id": "Field_1kiaxkq",
-      "key": "order_nr"
+      "key": "order_nr",
+      "validate": {
+        "required": true
+      }
     },
     {
       "values": [
@@ -203,7 +206,7 @@
       "id": "Field_1hs5n4n",
       "key": "productValue",
       "validate": {
-        "required": false
+        "required": true
       },
       "properties": {},
       "defaultValue": 0
