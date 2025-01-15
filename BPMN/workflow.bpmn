@@ -268,12 +268,12 @@
       <bpmn:sequenceFlow id="Flow_1de2kmx" name="Nein" sourceRef="Gateway_1kqguvj" targetRef="Gateway_0m728yl">
         <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${productValue &lt;= 100}</bpmn:conditionExpression>
       </bpmn:sequenceFlow>
-      <bpmn:sequenceFlow id="Flow_1t9fv23" name="Austausch" sourceRef="Gateway_1xnhz4p" targetRef="Activity_0j5v9tg">
+      <bpmn:sequenceFlow id="Flow_1t9fv23" name="Austausch" sourceRef="Gateway_1xnhz4p" targetRef="Activity_1dg30p4">
         <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${complaintOption== 'replace'}</bpmn:conditionExpression>
       </bpmn:sequenceFlow>
       <bpmn:subProcess id="Activity_0j5v9tg" name="Produkte produzieren">
-        <bpmn:incoming>Flow_1t9fv23</bpmn:incoming>
-        <bpmn:outgoing>Flow_1wz2d2q</bpmn:outgoing>
+        <bpmn:incoming>Flow_062sttp</bpmn:incoming>
+        <bpmn:outgoing>Flow_089ofws</bpmn:outgoing>
         <bpmn:startEvent id="Event_15gpy38">
           <bpmn:outgoing>Flow_0rapb2d</bpmn:outgoing>
         </bpmn:startEvent>
@@ -320,7 +320,7 @@
       <bpmn:sequenceFlow id="Flow_062ngqg" sourceRef="Activity_0t8qfg9" targetRef="Activity_12641y6" />
       <bpmn:exclusiveGateway id="Gateway_0nxjtr4">
         <bpmn:incoming>Flow_0s0j9by</bpmn:incoming>
-        <bpmn:incoming>Flow_062sttp</bpmn:incoming>
+        <bpmn:incoming>Flow_089ofws</bpmn:incoming>
         <bpmn:outgoing>Flow_0djay66</bpmn:outgoing>
       </bpmn:exclusiveGateway>
       <bpmn:endEvent id="Event_0d9m1xd">
@@ -362,8 +362,7 @@
         <bpmn:incoming>Flow_0r4pa6y</bpmn:incoming>
         <bpmn:outgoing>Flow_03a0ll1</bpmn:outgoing>
       </bpmn:userTask>
-      <bpmn:sequenceFlow id="Flow_1wz2d2q" sourceRef="Activity_0j5v9tg" targetRef="Activity_1dg30p4" />
-      <bpmn:sequenceFlow id="Flow_062sttp" sourceRef="Activity_1dg30p4" targetRef="Gateway_0nxjtr4" />
+      <bpmn:sequenceFlow id="Flow_062sttp" sourceRef="Activity_1dg30p4" targetRef="Activity_0j5v9tg" />
       <bpmn:sendTask id="Activity_102nr92" name="Beweis anfordern" camunda:type="external" camunda:topic="send-mail">
         <bpmn:extensionElements>
           <camunda:inputOutput>
@@ -377,7 +376,7 @@
         <bpmn:outgoing>Flow_1s6363r</bpmn:outgoing>
       </bpmn:sendTask>
       <bpmn:sequenceFlow id="Flow_1s6363r" sourceRef="Activity_102nr92" targetRef="Gateway_162l26v" />
-      <bpmn:sendTask id="Activity_1leosr4" name="alternative Lösung anbieten" camunda:type="external" camunda:topic="send-mail">
+      <bpmn:sendTask id="Activity_1leosr4" name="Kunden benachrichtigen" camunda:type="external" camunda:topic="send-mail">
         <bpmn:extensionElements>
           <camunda:inputOutput>
             <camunda:inputParameter name="body">Leider müssen wir Ihnen mitteilen, dass wir ihrem Reklamations wunsch nicht nachkommmen können.</camunda:inputParameter>
@@ -394,7 +393,7 @@
         <bpmn:incoming>Flow_1j9camg</bpmn:incoming>
         <bpmn:outgoing>Flow_05aogxq</bpmn:outgoing>
       </bpmn:userTask>
-      <bpmn:sendTask id="Activity_12641y6" name="alternative Lösung anbieten" camunda:type="external" camunda:topic="send-mail">
+      <bpmn:sendTask id="Activity_12641y6" name="Kunden benachrichtigen" camunda:type="external" camunda:topic="send-mail">
         <bpmn:extensionElements>
           <camunda:inputOutput>
             <camunda:inputParameter name="body">Wir freuen uns ihnen mitteilen zu können, dass wir gemäß ihres Wunsches die Reklamation eingeleitet haben.</camunda:inputParameter>
@@ -417,13 +416,14 @@
             <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
           </camunda:inputOutput>
         </bpmn:extensionElements>
-        <bpmn:incoming>Flow_1wz2d2q</bpmn:incoming>
+        <bpmn:incoming>Flow_1t9fv23</bpmn:incoming>
         <bpmn:outgoing>Flow_062sttp</bpmn:outgoing>
       </bpmn:serviceTask>
       <bpmn:userTask id="Activity_0t8qfg9" name="Erstattung einleiten" camunda:formRef="initiateRefund" camunda:formRefBinding="latest">
         <bpmn:incoming>Flow_1ltyt7r</bpmn:incoming>
         <bpmn:outgoing>Flow_062ngqg</bpmn:outgoing>
       </bpmn:userTask>
+      <bpmn:sequenceFlow id="Flow_089ofws" sourceRef="Activity_0j5v9tg" targetRef="Gateway_0nxjtr4" />
       <bpmn:textAnnotation id="TextAnnotation_055h3z7">
         <bpmn:text>Bestellung prüfen ob eine Reklamation in Frage kommt.</bpmn:text>
       </bpmn:textAnnotation>
@@ -519,7 +519,7 @@
       <bpmn:outgoing>Flow_1otu0ku</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_0vkgyq7" messageRef="Message_1g1faft" />
     </bpmn:intermediateCatchEvent>
-    <bpmn:userTask id="Activity_0noj4sm" name="alternative Lösung ausarbeiten" camunda:formRef="altSolution" camunda:formRefBinding="latest">
+    <bpmn:userTask id="Activity_0noj4sm" name="Alternative Lösung ausarbeiten" camunda:formRef="altSolution" camunda:formRefBinding="latest">
       <bpmn:incoming>Flow_1mwv8s7</bpmn:incoming>
       <bpmn:outgoing>Flow_07jqxw5</bpmn:outgoing>
     </bpmn:userTask>
@@ -776,6 +776,7 @@ Senden Sie hierfür einfach eine E-Mail an "daltcustomer+feedback@gmail.com"</ca
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_03omc58_di" bpmnElement="Activity_0noj4sm">
         <dc:Bounds x="2130" y="350" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_0uht0b7" bpmnElement="Activity_1kzbau1">
         <dc:Bounds x="2260" y="350" width="100" height="80" />
@@ -1188,15 +1189,11 @@ Senden Sie hierfür einfach eine E-Mail an "daltcustomer+feedback@gmail.com"</ca
       <bpmndi:BPMNShape id="Gateway_1xnhz4p_di" bpmnElement="Gateway_1xnhz4p" isMarkerVisible="true">
         <dc:Bounds x="2025" y="415" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="2013" y="386" width="73" height="27" />
+          <dc:Bounds x="2013.5" y="377.5" width="73" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_001islo_di" bpmnElement="Activity_0t8qfg9">
         <dc:Bounds x="2170" y="510" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_101rec0_di" bpmnElement="Activity_0j5v9tg">
-        <dc:Bounds x="2170" y="400" width="100" height="80" />
-        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0xv8zkf_di" bpmnElement="Gateway_10pjzgi">
         <dc:Bounds x="1665" y="305" width="50" height="50" />
@@ -1265,6 +1262,10 @@ Senden Sie hierfür einfach eine E-Mail an "daltcustomer+feedback@gmail.com"</ca
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0ocyf9f_di" bpmnElement="Activity_1dg30p4">
+        <dc:Bounds x="2170" y="400" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_101rec0_di" bpmnElement="Activity_0j5v9tg">
         <dc:Bounds x="2380" y="400" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
@@ -1322,7 +1323,7 @@ Senden Sie hierfür einfach eine E-Mail an "daltcustomer+feedback@gmail.com"</ca
         <di:waypoint x="2075" y="440" />
         <di:waypoint x="2170" y="440" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="2097" y="422" width="51" height="14" />
+          <dc:Bounds x="2090" y="413" width="51" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1ltyt7r_di" bpmnElement="Flow_1ltyt7r">
@@ -1394,14 +1395,9 @@ Senden Sie hierfür einfach eine E-Mail an "daltcustomer+feedback@gmail.com"</ca
         <di:waypoint x="870" y="440" />
         <di:waypoint x="915" y="440" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1wz2d2q_di" bpmnElement="Flow_1wz2d2q">
+      <bpmndi:BPMNEdge id="Flow_062sttp_di" bpmnElement="Flow_062sttp">
         <di:waypoint x="2270" y="440" />
         <di:waypoint x="2380" y="440" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_062sttp_di" bpmnElement="Flow_062sttp">
-        <di:waypoint x="2480" y="440" />
-        <di:waypoint x="2650" y="440" />
-        <di:waypoint x="2650" y="465" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1s6363r_di" bpmnElement="Flow_1s6363r">
         <di:waypoint x="520" y="440" />
@@ -1431,6 +1427,11 @@ Senden Sie hierfür einfach eine E-Mail an "daltcustomer+feedback@gmail.com"</ca
       <bpmndi:BPMNEdge id="Association_1qm2952_di" bpmnElement="Association_1qm2952">
         <di:waypoint x="2249" y="590" />
         <di:waypoint x="2279" y="630" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_089ofws_di" bpmnElement="Flow_089ofws">
+        <di:waypoint x="2480" y="440" />
+        <di:waypoint x="2650" y="440" />
+        <di:waypoint x="2650" y="465" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

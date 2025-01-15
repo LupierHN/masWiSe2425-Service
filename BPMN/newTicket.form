@@ -1,6 +1,16 @@
 {
   "components": [
     {
+      "text": "## Neues Ticket - Daten erfassen",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0pdymcs",
+        "columns": null
+      },
+      "id": "Field_0ilqwky"
+    },
+    {
       "label": "Kundenname",
       "type": "textfield",
       "layout": {
@@ -250,6 +260,5 @@
   },
   "executionPlatform": "Camunda Platform",
   "executionPlatformVersion": "7.22.0",
-  "schemaVersion": 16,
-  "versionTag": "1.0.3"
+  "schemaVersion": 16
 }

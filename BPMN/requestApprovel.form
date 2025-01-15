@@ -1,6 +1,16 @@
 {
   "components": [
     {
+      "text": "## Bestätigung vom Teamleiter anfordern",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1gwbmf8",
+        "columns": null
+      },
+      "id": "Field_00m0kcp"
+    },
+    {
       "action": "submit",
       "label": "Bestätigung für Rückerstattung erbitten",
       "type": "button",

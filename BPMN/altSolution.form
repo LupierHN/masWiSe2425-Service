@@ -1,6 +1,16 @@
 {
   "components": [
     {
+      "text": "## Alternative Lösung ausarbeiten",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_173asnw",
+        "columns": null
+      },
+      "id": "Field_1dqwaxa"
+    },
+    {
       "label": "Alternativer Lösungsvorschlag",
       "type": "textarea",
       "layout": {

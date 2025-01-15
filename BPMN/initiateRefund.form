@@ -1,6 +1,16 @@
 {
   "components": [
     {
+      "text": "## Erstattung einleiten",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0elmhww",
+        "columns": null
+      },
+      "id": "Field_1u1a8mi"
+    },
+    {
       "label": "Erstattungsbetrag",
       "type": "number",
       "layout": {

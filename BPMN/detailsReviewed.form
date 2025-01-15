@@ -1,6 +1,58 @@
 {
   "components": [
     {
+      "text": "## Details prüfen",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0ma3zej",
+        "columns": null
+      },
+      "id": "Field_06i6ien"
+    },
+    {
+      "label": "Betreff",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0k3os26",
+        "columns": null
+      },
+      "id": "Field_0ia85os",
+      "key": "subject",
+      "readonly": true
+    },
+    {
+      "label": "Beschreibung",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_1oc6fxf",
+        "columns": null
+      },
+      "id": "Field_0n7szvp",
+      "key": "description",
+      "readonly": true
+    },
+    {
+      "label": "Produktwert",
+      "type": "number",
+      "layout": {
+        "row": "Row_1tnsys9",
+        "columns": null
+      },
+      "id": "Field_0odxe1l",
+      "key": "productValue",
+      "readonly": true
+    },
+    {
+      "label": "Separator",
+      "type": "separator",
+      "layout": {
+        "row": "Row_1r5cz5s",
+        "columns": null
+      },
+      "id": "Field_00ipyh7"
+    },
+    {
       "values": [
         {
           "label": "Ersatz",
@@ -11,7 +63,7 @@
           "value": "refund"
         }
       ],
-      "label": "Reklmationsweise",
+      "label": "Reklamationsweise",
       "type": "select",
       "layout": {
         "row": "Row_00z4599",

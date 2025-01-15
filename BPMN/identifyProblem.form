@@ -1,6 +1,47 @@
 {
   "components": [
     {
+      "text": "## Problem identifizieren",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0nag636",
+        "columns": null
+      },
+      "id": "Field_0paqf39"
+    },
+    {
+      "label": "Betreff",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_05lit0d",
+        "columns": null
+      },
+      "id": "Field_08zfwds",
+      "key": "subject",
+      "readonly": true
+    },
+    {
+      "label": "Beschreibung",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0sfgs1d",
+        "columns": null
+      },
+      "id": "Field_0ek4qug",
+      "key": "description",
+      "readonly": true
+    },
+    {
+      "label": "Separator",
+      "type": "separator",
+      "layout": {
+        "row": "Row_1r1qdi4",
+        "columns": null
+      },
+      "id": "Field_0r1mbz5"
+    },
+    {
       "label": "Eskalation?",
       "type": "checkbox",
       "layout": {

@@ -1,6 +1,16 @@
 {
   "components": [
     {
+      "text": "## Anfrage archivieren",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_09tj03p",
+        "columns": null
+      },
+      "id": "Field_0227tdo"
+    },
+    {
       "action": "submit",
       "label": "Anfrage archivieren",
       "type": "button",

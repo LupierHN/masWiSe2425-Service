@@ -1,7 +1,17 @@
 {
   "components": [
     {
-      "label": "Produkt fehlerhaft",
+      "text": "## Beweis prüfen",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0skjy6b",
+        "columns": null
+      },
+      "id": "Field_0nati1n"
+    },
+    {
+      "label": "Produkt fehlerhaft?",
       "type": "checkbox",
       "layout": {
         "row": "Row_02q596s",
