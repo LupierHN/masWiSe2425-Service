@@ -1,0 +1,36 @@
+{
+  "components": [
+    {
+      "label": "Erstattungsbetrag",
+      "type": "number",
+      "layout": {
+        "row": "Row_0wkf7e4",
+        "columns": null
+      },
+      "id": "Field_07n2k4c",
+      "key": "productValue",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "action": "submit",
+      "label": "Erstattung einleiten",
+      "type": "button",
+      "layout": {
+        "row": "Row_0blt8wo",
+        "columns": null
+      },
+      "id": "Field_0lx9jx2"
+    }
+  ],
+  "type": "default",
+  "id": "initiateRefund",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 16
+}
