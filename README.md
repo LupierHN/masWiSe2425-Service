@@ -1,5 +1,10 @@
 # Projektarbeit: Workflow-Management für ein B2B-Unternehmen
 
+
+##Quicklinks
+[POSTMAN REST-Befehle für Service](MAS%20Camunda%20Service.postman_collection.json)
+[POSTMAN REST-Befehle für Bestellung/Anfrage](postman_collection_bestellunganfrage.json)
+
 ## Autoren
 - Name: Lukas Pierchalla
 - Matrikelnummer: 592515
