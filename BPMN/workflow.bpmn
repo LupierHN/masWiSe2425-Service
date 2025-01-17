@@ -111,7 +111,7 @@
       <bpmn:outgoing>Flow_06e5tlt</bpmn:outgoing>
       <bpmn:outgoing>Flow_0y70y1b</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:eventBasedGateway id="Gateway_15o0whv">
+    <bpmn:eventBasedGateway id="Gateway_15o0whv" name="Gab es eine Rückmeldung des Kunden?">
       <bpmn:incoming>Flow_194khki</bpmn:incoming>
       <bpmn:outgoing>Flow_1skyhcn</bpmn:outgoing>
       <bpmn:outgoing>Flow_03jj3u9</bpmn:outgoing>
@@ -154,10 +154,17 @@
         <bpmn:incoming>Flow_0v9t1af</bpmn:incoming>
         <bpmn:outgoing>Flow_0dtj7v8</bpmn:outgoing>
       </bpmn:userTask>
-      <bpmn:sendTask id="Activity_0el6kuf" name="alternative Lösung anbieten" camunda:type="external" camunda:topic="send-mail">
+      <bpmn:sendTask id="Activity_0el6kuf" name="Lösung anbieten" camunda:type="external" camunda:topic="send-mail">
         <bpmn:extensionElements>
           <camunda:inputOutput>
-            <camunda:inputParameter name="body">Wir können ihnen folgende Lösung anbieten: ${solution}</camunda:inputParameter>
+            <camunda:inputParameter name="body">Liebe Kundin, lieber Kunde,
+wir freuen uns, Ihnen mitteilen zu können, dass es Neuigkeiten zu Ihrer Supportanfrage gibt.
+
+Unsere Mitarbeiterinnen und Mitarbeiter haben folgende Lösung für Sie erarbeitet:
+${solution}
+---
+Bitte teilen Sie uns mit, ob Sie mit dieser Lösung einverstanden sind.
+Ihr DALT Kundenservice</camunda:inputParameter>
             <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
             <camunda:inputParameter name="to">${email}</camunda:inputParameter>
             <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
@@ -204,10 +211,18 @@
         <bpmn:incoming>Flow_1y2fnjs</bpmn:incoming>
         <bpmn:outgoing>Flow_0jmvwor</bpmn:outgoing>
       </bpmn:userTask>
-      <bpmn:sendTask id="Activity_1l1bf6n" name="alternative Lösung anbieten" camunda:type="external" camunda:topic="send-mail">
+      <bpmn:sendTask id="Activity_1l1bf6n" name="Lösung anbieten" camunda:type="external" camunda:topic="send-mail">
         <bpmn:extensionElements>
           <camunda:inputOutput>
-            <camunda:inputParameter name="body">Wir können ihnen folgende Lösung anbieten: ${solution}</camunda:inputParameter>
+            <camunda:inputParameter name="body">Liebe Kundin, lieber Kunde,
+wir freuen uns, Ihnen mitteilen zu können, dass es Neuigkeiten zu Ihrer Supportanfrage gibt.
+
+Unsere Mitarbeiterinnen und Mitarbeiter haben folgende Lösung für Sie erarbeitet:
+${solution}
+---
+Bitte teilen Sie uns mit, ob Sie mit dieser Lösung einverstanden sind.
+Ihr DALT Kundenservice
+</camunda:inputParameter>
             <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
             <camunda:inputParameter name="to">${email}</camunda:inputParameter>
             <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
@@ -286,7 +301,7 @@
         <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${complaintOption== 'refund' || null}</bpmn:conditionExpression>
       </bpmn:sequenceFlow>
       <bpmn:sequenceFlow id="Flow_05aogxq" sourceRef="Activity_18qi483" targetRef="Gateway_10pjzgi" />
-      <bpmn:eventBasedGateway id="Gateway_10pjzgi">
+      <bpmn:eventBasedGateway id="Gateway_10pjzgi" name="Bestätitgt der Teamleiter die Reklamation?">
         <bpmn:incoming>Flow_05aogxq</bpmn:incoming>
         <bpmn:outgoing>Flow_0q2hscs</bpmn:outgoing>
         <bpmn:outgoing>Flow_10dv6jy</bpmn:outgoing>
@@ -326,7 +341,7 @@
       <bpmn:endEvent id="Event_0d9m1xd">
         <bpmn:incoming>Flow_0djay66</bpmn:incoming>
       </bpmn:endEvent>
-      <bpmn:eventBasedGateway id="Gateway_162l26v">
+      <bpmn:eventBasedGateway id="Gateway_162l26v" name="Wurde ein Beweis erhalten?">
         <bpmn:incoming>Flow_1s6363r</bpmn:incoming>
         <bpmn:outgoing>Flow_1o5873s</bpmn:outgoing>
         <bpmn:outgoing>Flow_14g9n3y</bpmn:outgoing>
@@ -366,7 +381,10 @@
       <bpmn:sendTask id="Activity_102nr92" name="Beweis anfordern" camunda:type="external" camunda:topic="send-mail">
         <bpmn:extensionElements>
           <camunda:inputOutput>
-            <camunda:inputParameter name="body">Um ihren Reklamationsanspruch zu prüfen, senden Sie uns bitte einen Beweis für den Produktfehler zu.</camunda:inputParameter>
+            <camunda:inputParameter name="body">Liebe Kundin, lieber Kunde,
+wir sind gerade im Prozess der Bearbeitung Ihrer Reklamation. Dabei sind wir auf Ihre Mithilfe angewiesen.
+Bitte senden Sie uns ein Foto/Video des Produktfehlers, damit wir Ihre Reklamation prüfen können.
+Ihr DALT Kundenservice</camunda:inputParameter>
             <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
             <camunda:inputParameter name="to">${email}</camunda:inputParameter>
             <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
@@ -379,7 +397,10 @@
       <bpmn:sendTask id="Activity_1leosr4" name="Kunden benachrichtigen" camunda:type="external" camunda:topic="send-mail">
         <bpmn:extensionElements>
           <camunda:inputOutput>
-            <camunda:inputParameter name="body">Leider müssen wir Ihnen mitteilen, dass wir ihrem Reklamations wunsch nicht nachkommmen können.</camunda:inputParameter>
+            <camunda:inputParameter name="body">Liebe Kundin, lieber Kunde,
+wir haben Ihr Anliegen sorgfältig geprüft. 
+Leider müssen wir Ihnen mitteilen, dass wir den gewünschten Artikel nicht reklamieren können.
+Ihr DALT Kundenservice</camunda:inputParameter>
             <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
             <camunda:inputParameter name="to">${email}</camunda:inputParameter>
             <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
@@ -393,10 +414,13 @@
         <bpmn:incoming>Flow_1j9camg</bpmn:incoming>
         <bpmn:outgoing>Flow_05aogxq</bpmn:outgoing>
       </bpmn:userTask>
-      <bpmn:sendTask id="Activity_12641y6" name="Kunden benachrichtigen" camunda:type="external" camunda:topic="send-mail">
+      <bpmn:sendTask id="Activity_12641y6" name="Kunden zur Erstattung benachrichtigen" camunda:type="external" camunda:topic="send-mail">
         <bpmn:extensionElements>
           <camunda:inputOutput>
-            <camunda:inputParameter name="body">Wir freuen uns ihnen mitteilen zu können, dass wir gemäß ihres Wunsches die Reklamation eingeleitet haben.</camunda:inputParameter>
+            <camunda:inputParameter name="body">Liebe Kundin, lieber Kunde,
+wir haben Ihr Anliegen sorgfältig geprüft und freuen uns, Ihnen mitteilen zu können, dass wir die Rückerstattung Ihres Artikels veranlasst haben.
+Der Betrag von ${productValue} wird schnellstmöglich auf Ihr Referenzkonto überwiesen.
+Ihr DALT Kundenservice</camunda:inputParameter>
             <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
             <camunda:inputParameter name="to">${email}</camunda:inputParameter>
             <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
@@ -529,7 +553,14 @@
     <bpmn:sendTask id="Activity_1kzbau1" name="alternative Lösung anbieten" camunda:type="external" camunda:topic="send-mail">
       <bpmn:extensionElements>
         <camunda:inputOutput>
-          <camunda:inputParameter name="body">Wir können ihnen folgende Lösung anbieten: ${altSolution}</camunda:inputParameter>
+          <camunda:inputParameter name="body">Liebe Kundin, lieber Kunde,
+wir freuen uns, Ihnen mitteilen zu können, dass es Neuigkeiten zu Ihrer Supportanfrage gibt.
+
+Unsere Mitarbeiterinnen und Mitarbeiter haben folgende Lösung für Sie erarbeitet:
+${altSolution}
+---
+Bitte teilen Sie uns mit, ob Sie mit dieser Lösung einverstanden sind.
+Ihr DALT Kundenservice</camunda:inputParameter>
           <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
           <camunda:inputParameter name="to">${email}</camunda:inputParameter>
           <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
@@ -551,8 +582,10 @@
     <bpmn:sendTask id="Activity_1et12j3" name="Kunden über Archivierung/Klärung informieren" camunda:type="external" camunda:topic="send-mail">
       <bpmn:extensionElements>
         <camunda:inputOutput>
-          <camunda:inputParameter name="body">Da ihre Anfrage abgeschlossen ist oder wir nichts mehr von ihnen gehört haben, wurde Ihr Ticket geschlossen.
-Sie können jederzeit gerne ein neues Ticket eröffnen.</camunda:inputParameter>
+          <camunda:inputParameter name="body">Liebe Kundin, lieber Kunde,
+da Ihre Anfrage abgeschlossen ist oder wir nichts mehr von Ihnen gehört haben, wurde Ihr Ticket geschlossen.
+Sie können jederzeit ein neues Ticket eröffnen.
+Ihr DALT Kundenservice</camunda:inputParameter>
           <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
           <camunda:inputParameter name="to">${email}</camunda:inputParameter>
           <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
@@ -573,7 +606,15 @@ Sie können jederzeit gerne ein neues Ticket eröffnen.</camunda:inputParameter>
     <bpmn:sendTask id="Activity_0pzsrku" name="Eingangs-&#10;bestätigung versenden" camunda:type="external" camunda:topic="send-mail">
       <bpmn:extensionElements>
         <camunda:inputOutput>
-          <camunda:inputParameter name="body">Ihre Anfrage hat uns erreicht und wird schnellstmöglich bearbeitet</camunda:inputParameter>
+          <camunda:inputParameter name="body">Lieber Kunde, liebe Kundin,
+
+Ihre Supportanfrage ist bei uns eingegangen und wird schnellstmöglich bearbeitet.
+Nachfolgend finden Sie noch einmal alle Informationen auf einen Blick:
+---
+Betreff: ${subject}
+Beschreibung: ${description}
+---
+Ihr DALT Kundenservice</camunda:inputParameter>
           <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
           <camunda:inputParameter name="to">${email}</camunda:inputParameter>
           <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
@@ -587,8 +628,10 @@ Sie können jederzeit gerne ein neues Ticket eröffnen.</camunda:inputParameter>
     <bpmn:sendTask id="Activity_1dsxg3c" name="Anfrage zur Bewertung des Kundenservice versenden" camunda:type="external" camunda:topic="send-mail">
       <bpmn:extensionElements>
         <camunda:inputOutput>
-          <camunda:inputParameter name="body">Bitte geben Sie uns zu unserem Kundenservice ein Feedback.
-Senden Sie hierfür einfach eine E-Mail an "daltcustomer+feedback@gmail.com"</camunda:inputParameter>
+          <camunda:inputParameter name="body">Liebe Kundin, lieber Kunde,
+wir freuen uns über Ihr Feedback zu unserem Kundenservice.
+Senden Sie dazu einfach eine E-Mail an "daltcustomer+feedback@gmail.com".
+Ihr DALT Kundenservice</camunda:inputParameter>
           <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
           <camunda:inputParameter name="to">${email}</camunda:inputParameter>
           <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
@@ -623,7 +666,7 @@ Senden Sie hierfür einfach eine E-Mail an "daltcustomer+feedback@gmail.com"</ca
       <bpmn:outgoing>Flow_184x0wz</bpmn:outgoing>
     </bpmn:sendTask>
     <bpmn:sequenceFlow id="Flow_1t96w5i" sourceRef="Gateway_0by4owg" targetRef="Event_0xj9lxq" />
-    <bpmn:eventBasedGateway id="Gateway_0by4owg">
+    <bpmn:eventBasedGateway id="Gateway_0by4owg" name="Wurde Feedback erteilt?">
       <bpmn:incoming>Flow_1tk6k9j</bpmn:incoming>
       <bpmn:outgoing>Flow_1t96w5i</bpmn:outgoing>
       <bpmn:outgoing>Flow_1ml8l00</bpmn:outgoing>
@@ -705,6 +748,9 @@ Senden Sie hierfür einfach eine E-Mail an "daltcustomer+feedback@gmail.com"</ca
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_1sllmng_di" bpmnElement="Gateway_15o0whv">
         <dc:Bounds x="1835" y="455" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1896" y="470" width="89" height="40" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_1p903q2_di" bpmnElement="Gateway_1p903q2" isMarkerVisible="true">
         <dc:Bounds x="1735" y="455" width="50" height="50" />
@@ -789,6 +835,9 @@ Senden Sie hierfür einfach eine E-Mail an "daltcustomer+feedback@gmail.com"</ca
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_07ptyca_di" bpmnElement="Gateway_0by4owg">
         <dc:Bounds x="3085" y="545" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3068" y="602" width="84" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1dj1cl1_di" bpmnElement="Event_1dj1cl1">
         <dc:Bounds x="3622" y="442" width="36" height="36" />
@@ -1198,6 +1247,9 @@ Senden Sie hierfür einfach eine E-Mail an "daltcustomer+feedback@gmail.com"</ca
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0xv8zkf_di" bpmnElement="Gateway_10pjzgi">
         <dc:Bounds x="1665" y="305" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1660" y="362" width="68" height="40" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0fln5j0_di" bpmnElement="Event_0fln5j0">
         <dc:Bounds x="1792" y="232" width="36" height="36" />
@@ -1225,6 +1277,9 @@ Senden Sie hierfür einfach eine E-Mail an "daltcustomer+feedback@gmail.com"</ca
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_1pxc3ef_di" bpmnElement="Gateway_162l26v">
         <dc:Bounds x="565" y="415" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="547" y="472" width="88" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1mnz39u_di" bpmnElement="Event_1mnz39u">
         <dc:Bounds x="802" y="82" width="36" height="36" />

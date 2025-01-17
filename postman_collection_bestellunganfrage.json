@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "7c5b8c84-4b08-4254-8cae-0c57bf2d1228",
+		"name": "mas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40251927"
+	},
+	"item": [
+		{
+			"name": "startformular email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"messageName\": \"E-Mail\",\n\"processVariables\": {\n\"sonderanfertigung\": {\n\"value\": true\n},\n\"neukunde\": {\n    \"value\": true\n}\n}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "startformular online",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"messageName\": \"Online-Formular\",\n\"processVariables\": {\n\"sonderanfertigung\": {\n\"value\": false\n},\n\"neukunde\": {\n    \"value\": false\n},\n\"kundenname\": {\n    \"value\": \"Hans Peter\"\n},\n\"produktwunsch\":{\n    \"value\": \"T-Shirts\"\n},\n\n    \"bestellumfang\":{\n        \"value\": \"20\"\n    }\n\n}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "angebotannahme nach rückfrage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"messageName\": \"AngebotRueckmeldung\",\n    \"processVariables\": {\n        \"angebotannahme\": {\n            \"value\": true\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "angebot direkt annehmen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"messageName\": \"AngebotAnnahme\",\n    \"processVariables\": {}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "änderungswunscheingang",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"messageName\": \"Änderungswunscheingang\",\n\"processVariables\": {\n\"bestellumfang\": {\n\"value\": \"200\"\n},\n\"bestellwert\": {\n    \"value\": \"1001\"\n}\n}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vertragseingang (Unterschrift) Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"messageName\": \"Vertragseingang\",\n    \"processVariables\": {}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Designvorschlag Annahme",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"messageName\": \"KundenmeinungDesign\",\n    \"processVariables\": {\n        \"designAccepted\": {\n            \"value\": true}\n    }}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Designvorschlag Ablehnung",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"messageName\": \"KundenmeinungDesign\",\n    \"processVariables\": {\n        \"designAccepted\": false\n    }}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Zahlungseingang",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"messageName\": \"Zahlungseingang\",\n    \"processVariables\": {}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"message"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

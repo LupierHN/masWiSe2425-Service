@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "7947252f-dc52-457f-9d6f-ce86e72695da",
+		"name": "MAS Camunda Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40250997"
+	},
+	"item": [
+		{
+			"name": "start Process",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messageName\": \"SupportAnfrage\",\r\n    \"processVariables\": {\r\n        \"viaMail\": {\r\n            \"value\": false\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}",
+					"host": [
+						"{{baseURL}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "mail",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"messageName\": \"SupportAnfrage\",\r\n    \"processVariables\": {\r\n        \"viaMail\": {\"value\": true},\r\n        \"customer\": { \"value\": \"Max\"},\r\n        \"customer_nr\": { \"value\": 1234},\r\n        \"email\": { \"value\": \"Lukas.Pierchalla@Student.HTW-Berlin.de\"}, // richtige E-Mail-Adresse\r\n        \"streetAddress\": { \"value\": \"Treskowallee\"}, // Keine Leerzeichen sondern \"-\" -> Muster-Str\r\n        \"countryCode\": { \"value\": \"DE\"},\r\n        \"addressLocality\": { \"value\": \"Berlin\"},\r\n        \"postalCode\": { \"value\": 10318},\r\n        \"order_nr\": { \"value\": 9876},\r\n        \"category\": { \"value\": \"none\"}, // none, simple, complaint, delivery\r\n        \"complaintOption\": { \"value\": \"replace\"},\r\n        \"productValue\": { \"value\": 99}, // > 100 -> Freigabe durch Teamleiter benötigt\r\n        \"subject\": { \"value\": \"Testbetreff\"},\r\n        \"description\": { \"value\": \"Testbeschreibung\"}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}",
+							"host": [
+								"{{baseURL}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Beweis erhalten",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messageName\": \"beweis\",\r\n    \"processVariables\": {\r\n        \"evidence\": {\r\n            \"value\": false\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}",
+					"host": [
+						"{{baseURL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Erstattung Ablehnung",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messageName\": \"ablehnung_erstattung\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}",
+					"host": [
+						"{{baseURL}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Erstattung Bestätigung",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"messageName\": \"bestaetigung_erstattung\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}",
+							"host": [
+								"{{baseURL}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Rückmeldung erhalten",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messageName\": \"rueckmeldung\",\r\n    \"processVariables\": {\r\n        \"solved\": {\r\n            \"value\": false\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}",
+					"host": [
+						"{{baseURL}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Rückmeldung erhalten Ja",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"messageName\": \"rueckmeldung\",\r\n    \"processVariables\": {\r\n        \"solved\": {\r\n            \"value\": true\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}",
+							"host": [
+								"{{baseURL}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Antwort erhalten",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messageName\": \"antwortErhalten\",\r\n    \"processVariables\": {\r\n        \"alternative\": {\r\n            \"value\": false\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}",
+					"host": [
+						"{{baseURL}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Antwort erhalten Ja",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"messageName\": \"antwortErhalten\",\r\n    \"processVariables\": {\r\n        \"alternative\": {\r\n            \"value\": true\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}",
+							"host": [
+								"{{baseURL}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Feedback erhalten",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messageName\": \"feedback\",\r\n    \"processVariables\": {\r\n        \"feedback\": {\r\n            \"value\": \"Inhalt\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}",
+					"host": [
+						"{{baseURL}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8080/engine-rest/message",
+			"type": "string"
+		}
+	]
+}
