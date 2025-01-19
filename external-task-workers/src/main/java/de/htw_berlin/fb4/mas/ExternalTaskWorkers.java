@@ -22,8 +22,8 @@ public class ExternalTaskWorkers {
                 .maxTasks(1)
                 .build();
 
-        client.subscribe("RPABotFeedback.1.0.2")
-                .handler(new RunUiPathRobot(Path.of("RPABotFeedback.1.0.2.nupkg").toAbsolutePath()))
+        client.subscribe("Adressvalidierung.1.0.2")
+                .handler(new RunUiPathRobot(Path.of("Adressvalidierung.2.5.10.nupkg").toAbsolutePath()))
                 .open();
         client.subscribe("print-variables").handler(new PrintVariables()).open();
         client.subscribe("send-mail").handler(new SendMail()).open();

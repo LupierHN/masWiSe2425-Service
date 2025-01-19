@@ -165,7 +165,7 @@ ${solution}
 ---
 Bitte teilen Sie uns mit, ob Sie mit dieser Lösung einverstanden sind.
 Ihr DALT Kundenservice</camunda:inputParameter>
-            <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
+            <camunda:inputParameter name="from"></camunda:inputParameter>
             <camunda:inputParameter name="to">${email}</camunda:inputParameter>
             <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
           </camunda:inputOutput>
@@ -223,7 +223,7 @@ ${solution}
 Bitte teilen Sie uns mit, ob Sie mit dieser Lösung einverstanden sind.
 Ihr DALT Kundenservice
 </camunda:inputParameter>
-            <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
+            <camunda:inputParameter name="from"></camunda:inputParameter>
             <camunda:inputParameter name="to">${email}</camunda:inputParameter>
             <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
           </camunda:inputOutput>
@@ -301,7 +301,7 @@ Ihr DALT Kundenservice
         <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${complaintOption== 'refund' || null}</bpmn:conditionExpression>
       </bpmn:sequenceFlow>
       <bpmn:sequenceFlow id="Flow_05aogxq" sourceRef="Activity_18qi483" targetRef="Gateway_10pjzgi" />
-      <bpmn:eventBasedGateway id="Gateway_10pjzgi" name="Bestätitgt der Teamleiter die Reklamation?">
+      <bpmn:eventBasedGateway id="Gateway_10pjzgi" name="Bestätigt der Teamleiter die Reklamation?">
         <bpmn:incoming>Flow_05aogxq</bpmn:incoming>
         <bpmn:outgoing>Flow_0q2hscs</bpmn:outgoing>
         <bpmn:outgoing>Flow_10dv6jy</bpmn:outgoing>
@@ -385,7 +385,7 @@ Ihr DALT Kundenservice
 wir sind gerade im Prozess der Bearbeitung Ihrer Reklamation. Dabei sind wir auf Ihre Mithilfe angewiesen.
 Bitte senden Sie uns ein Foto/Video des Produktfehlers, damit wir Ihre Reklamation prüfen können.
 Ihr DALT Kundenservice</camunda:inputParameter>
-            <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
+            <camunda:inputParameter name="from"></camunda:inputParameter>
             <camunda:inputParameter name="to">${email}</camunda:inputParameter>
             <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
           </camunda:inputOutput>
@@ -401,7 +401,7 @@ Ihr DALT Kundenservice</camunda:inputParameter>
 wir haben Ihr Anliegen sorgfältig geprüft. 
 Leider müssen wir Ihnen mitteilen, dass wir den gewünschten Artikel nicht reklamieren können.
 Ihr DALT Kundenservice</camunda:inputParameter>
-            <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
+            <camunda:inputParameter name="from"></camunda:inputParameter>
             <camunda:inputParameter name="to">${email}</camunda:inputParameter>
             <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
           </camunda:inputOutput>
@@ -421,7 +421,7 @@ Ihr DALT Kundenservice</camunda:inputParameter>
 wir haben Ihr Anliegen sorgfältig geprüft und freuen uns, Ihnen mitteilen zu können, dass wir die Rückerstattung Ihres Artikels veranlasst haben.
 Der Betrag von ${productValue} wird schnellstmöglich auf Ihr Referenzkonto überwiesen.
 Ihr DALT Kundenservice</camunda:inputParameter>
-            <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
+            <camunda:inputParameter name="from"></camunda:inputParameter>
             <camunda:inputParameter name="to">${email}</camunda:inputParameter>
             <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
           </camunda:inputOutput>
@@ -435,7 +435,7 @@ Ihr DALT Kundenservice</camunda:inputParameter>
         <bpmn:extensionElements>
           <camunda:inputOutput>
             <camunda:inputParameter name="body">Wir freuen uns ihnen mitteilen zu können, dass wir gemäß ihres Wunsches die Reklamation eingeleitet haben. Bitte bringen Sie ihren defekten Artikel zu einem der folgenden DHL-Service-Points</camunda:inputParameter>
-            <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
+            <camunda:inputParameter name="from"></camunda:inputParameter>
             <camunda:inputParameter name="to">${email}</camunda:inputParameter>
             <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
           </camunda:inputOutput>
@@ -561,7 +561,7 @@ ${altSolution}
 ---
 Bitte teilen Sie uns mit, ob Sie mit dieser Lösung einverstanden sind.
 Ihr DALT Kundenservice</camunda:inputParameter>
-          <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
+          <camunda:inputParameter name="from"></camunda:inputParameter>
           <camunda:inputParameter name="to">${email}</camunda:inputParameter>
           <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
         </camunda:inputOutput>
@@ -586,7 +586,7 @@ Ihr DALT Kundenservice</camunda:inputParameter>
 da Ihre Anfrage abgeschlossen ist oder wir nichts mehr von Ihnen gehört haben, wurde Ihr Ticket geschlossen.
 Sie können jederzeit ein neues Ticket eröffnen.
 Ihr DALT Kundenservice</camunda:inputParameter>
-          <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
+          <camunda:inputParameter name="from"></camunda:inputParameter>
           <camunda:inputParameter name="to">${email}</camunda:inputParameter>
           <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
         </camunda:inputOutput>
@@ -615,7 +615,7 @@ Betreff: ${subject}
 Beschreibung: ${description}
 ---
 Ihr DALT Kundenservice</camunda:inputParameter>
-          <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
+          <camunda:inputParameter name="from"></camunda:inputParameter>
           <camunda:inputParameter name="to">${email}</camunda:inputParameter>
           <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
         </camunda:inputOutput>
@@ -632,7 +632,7 @@ Ihr DALT Kundenservice</camunda:inputParameter>
 wir freuen uns über Ihr Feedback zu unserem Kundenservice.
 Senden Sie dazu einfach eine E-Mail an "daltcustomer+feedback@gmail.com".
 Ihr DALT Kundenservice</camunda:inputParameter>
-          <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
+          <camunda:inputParameter name="from"></camunda:inputParameter>
           <camunda:inputParameter name="to">${email}</camunda:inputParameter>
           <camunda:inputParameter name="subject">[DALT Kundenservice] Ihre Supportanfrage ${order_nr}</camunda:inputParameter>
         </camunda:inputOutput>
@@ -657,7 +657,7 @@ Ihr DALT Kundenservice</camunda:inputParameter>
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="body">${feedback}</camunda:inputParameter>
-          <camunda:inputParameter name="from">s0592515@htw-berlin.de</camunda:inputParameter>
+          <camunda:inputParameter name="from"></camunda:inputParameter>
           <camunda:inputParameter name="to">daltcustomer+feedback@gmail.com</camunda:inputParameter>
           <camunda:inputParameter name="subject">Feedback</camunda:inputParameter>
         </camunda:inputOutput>

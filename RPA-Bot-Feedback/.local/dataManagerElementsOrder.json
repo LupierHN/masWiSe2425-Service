@@ -20,7 +20,9 @@
         "mailMessages&Sequence_1",
         "emailList&Sequence_1"
       ],
-      "ArgumentsSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "inputData"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
